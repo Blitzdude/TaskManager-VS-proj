@@ -58,9 +58,20 @@ void TaskManager::KysyTiedot() {
 		taskList.push_front(ptr);
 		cout << "Lisätty eteen" << endl;
 	}
-	else {							// muuten listan taakse.
+	else if (temp_prior == 2) {		// muuten listan taakse.
 		taskList.push_back(ptr);
 		cout << "Lisätty taakse." << endl;
 	}
 	// miksi ei delete?
+}
+
+void TaskManager::poistaTiedot(int poistId) {
+	deque<Task*>::iterator deque_it = taskList.begin();
+
+	while (deque_it != taskList.end()) {
+		if ((*deque_it)->getId() == poistId) {
+			taskList.erase(deque_it);
+		}
+		deque_it++;
+	}
 }
