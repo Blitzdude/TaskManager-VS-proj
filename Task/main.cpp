@@ -3,11 +3,14 @@
 #include <string>
 
 using namespace std;
+
+// TODO: implementoi useamman prioriteetti tason luominen
+// TODO: implementoi task-listan järjestäminen id ja prioriteetin mukaan. 
 int main()
 {
-	TaskManager Manager;
-	Task task1("Testi", "19.9.1999", 11, 2);
-	for (int i = 0; i < 9; i++) {
+	TaskManager Manager;	// luodaan manager olio
+	Task task1("Testi", "19.9.1999", 11, 2);	// lisätään taski
+	for (int i = 0; i < 9; i++) {				// lisätään 10 taskia (testaus)
 		string str = to_string(i);
 		Task *ptr;
 		ptr = new Task("Task" + str, "12.12.199" + str, i, 2);
@@ -15,7 +18,8 @@ int main()
 		cout << flush;
 	}
 	
-	Manager.taskList.push_front(&task1);
+	Manager.taskList.push_front(&task1);	// lisätään task1 task deque-containeriin
+											// ottaa osoitteen, koska tietotyyppi on task pointteri. 
 	
 
 	cout << "*** Tervetuloa task manageriin ***" << endl;

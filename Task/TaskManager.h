@@ -17,6 +17,7 @@ private:
 	void TulostaTiedot();
 	void KysyTiedot();
 	void poistaTiedot(int poistId);
+	
 public:
 	std::deque<Task*> taskList;
 };

@@ -54,6 +54,13 @@ void TaskManager::KysyTiedot() {
 	// tehd‰‰n uusi Task objekti ja lis‰t‰‰n se tasklist deque- listaan.
 	Task *ptr = new Task(temp_name, temp_dl, temp_id, temp_prior);
 
+	deque<Task*>::iterator deque_it = taskList.begin();
+
+	while (deque_it != taskList.end()) {
+		// implementoi useamman prioritetti tason lis‰‰minen, 
+		// iteraattorilla k‰yt‰v‰ l‰pi mihin kohtaan uusi taski laitetaan
+		// esim prioriteetti 3 menee prioriteetti 2 j‰lkeen. 
+	}
 	if (temp_prior == 1) {			// jos prioriteetti on korkeampi kuin 2, lis‰t‰‰n listan eteen. 
 		taskList.push_front(ptr);
 		cout << "Lis‰tty eteen" << endl;
@@ -75,3 +82,4 @@ void TaskManager::poistaTiedot(int poistId) {
 		deque_it++;
 	}
 }
+
